@@ -5,7 +5,7 @@
 /// `nums1` has space for `m + n` elements. The first `m` elements are sorted.
 /// The last `n` elements are `0` and must be ignored. `nums2` has `n` sorted
 /// elements. The result must be stored in `nums1`.
-#[warn(dead_code)]
+#[allow(dead_code)]
 pub fn merge(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
     let mut m = m - 1;
     let mut n = n - 1;
