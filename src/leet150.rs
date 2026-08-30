@@ -7,3 +7,4 @@ mod p27_remove_element;
 mod p26_remove_duplicates_from_sorted_array;
 mod p80_remove_duplicates_from_sorted_array_ii;
 mod p169_majority_element;
+mod p189_rotate_array;
