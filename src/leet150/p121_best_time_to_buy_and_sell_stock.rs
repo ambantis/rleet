@@ -5,18 +5,14 @@
 /// profit you can get. If no profit is possible, return 0.
 #[allow(dead_code)]
 pub fn max_profit(prices: Vec<i32>) -> i32 {
-    let len: usize = prices.len();
-    let mut max_from_right = prices.clone();
-    for i in (1..len).rev() {
-        max_from_right[i - 1] = max_from_right[i - 1].max(max_from_right[i]);
+    let mut cheapest: i32 = i32::MAX;
+    let mut result = 0;
+    for price in prices.iter() {
+        cheapest = cheapest.min(*price);
+        result = result.max(price - cheapest);
     }
 
-    prices
-        .iter()
-        .zip(&max_from_right)
-        .map(|(buy, sell)| sell - buy)
-        .max()
-        .unwrap()
+    result
 }
 
 #[cfg(test)]
