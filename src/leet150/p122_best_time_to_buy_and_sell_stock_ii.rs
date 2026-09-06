@@ -6,19 +6,11 @@
 /// allowed. Return the maximum profit you can achieve.
 #[allow(dead_code)]
 pub fn max_profit(prices: Vec<i32>) -> i32 {
-    let mut profits = 0;
-
     prices
         .iter()
         .zip(prices.iter().skip(1))
-        .for_each(|(buy, sell)| {
-            let profit = sell - buy;
-            if profit > 0 {
-                profits += profit;
-            }
-        });
-
-    profits
+        .map(|(buy, sell)| 0.max(sell - buy))
+        .sum()
 }
 
 #[cfg(test)]
