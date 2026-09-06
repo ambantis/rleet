@@ -6,7 +6,7 @@ use std::collections::HashSet;
 ///
 /// After the rotation, the last `k` values must be at the start of `nums`, in
 /// their original order, followed by the rest.
-#[allow(dead_code)]
+#[allow(dead_code, clippy::ptr_arg)]
 pub fn rotate(nums: &mut Vec<i32>, k: i32) {
     let len = nums.len();
     let k: usize = k as usize % len;

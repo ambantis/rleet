@@ -4,7 +4,7 @@
 ///
 /// The remaining values must be at the start of `nums`. Their order does not
 /// matter. Return how many values remain.
-#[allow(dead_code)]
+#[allow(dead_code, clippy::ptr_arg)]
 pub fn remove_element(nums: &mut Vec<i32>, val: i32) -> i32 {
     let mut idx: i32 = 0;
     for i in 0..nums.len() {
@@ -13,7 +13,7 @@ pub fn remove_element(nums: &mut Vec<i32>, val: i32) -> i32 {
             idx += 1;
         }
     }
-    return idx;
+    idx
 }
 
 #[cfg(test)]

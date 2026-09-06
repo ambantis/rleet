@@ -4,7 +4,7 @@
 ///
 /// `nums` is sorted in non-decreasing order. The kept values must be at the
 /// start of `nums`, in their original order. Return how many values remain.
-#[allow(dead_code)]
+#[allow(dead_code, clippy::ptr_arg)]
 pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
     let mut count = 1;
     let mut idx: usize = 0;
