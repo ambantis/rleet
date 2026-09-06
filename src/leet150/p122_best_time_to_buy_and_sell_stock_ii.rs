@@ -10,7 +10,7 @@ pub fn max_profit(prices: Vec<i32>) -> i32 {
 
     prices
         .iter()
-        .zip(prices[1..].iter())
+        .zip(prices.iter().skip(1))
         .for_each(|(buy, sell)| {
             let profit = sell - buy;
             if profit > 0 {
